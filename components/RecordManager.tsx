@@ -324,24 +324,24 @@ const RecordManager: React.FC<RecordManagerProps> = ({ students, records, setRec
                 <p className="text-zinc-500 mt-1 text-[10px] sm:text-sm lg:text-base">录入新课时，或以月视图/列表管理历史记录。</p>
             </div>
             
-            <div className="bg-zinc-100 p-1 rounded-lg flex flex-wrap gap-1 w-full overflow-x-auto">
+            <div className="bg-zinc-100 p-2 rounded-lg flex flex-wrap gap-2 w-full overflow-x-auto">
                 <button
                     onClick={() => setViewMode('entry')}
-                    className={`px-2 py-1.5 rounded-md text-[10px] font-medium flex items-center gap-1 transition-all whitespace-nowrap ${viewMode === 'entry' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1.5 transition-all whitespace-nowrap ${viewMode === 'entry' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
                 >
-                    <PlusCircle size={10} /> <span className="hidden sm:inline">课时录入</span><span className="sm:hidden">录入</span>
+                    <PlusCircle size={14} /> <span className="hidden sm:inline">课时录入</span><span className="sm:hidden">录入</span>
                 </button>
                 <button
                     onClick={() => setViewMode('calendar')}
-                    className={`px-2 py-1.5 rounded-md text-[10px] font-medium flex items-center gap-1 transition-all whitespace-nowrap ${viewMode === 'calendar' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1.5 transition-all whitespace-nowrap ${viewMode === 'calendar' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
                 >
-                    <LayoutGrid size={10} /> <span className="hidden sm:inline">课时看板</span><span className="sm:hidden">看板</span>
+                    <LayoutGrid size={14} /> <span className="hidden sm:inline">课时看板</span><span className="sm:hidden">看板</span>
                 </button>
                 <button
                     onClick={() => setViewMode('list')}
-                    className={`px-2 py-1.5 rounded-md text-[10px] font-medium flex items-center gap-1 transition-all whitespace-nowrap ${viewMode === 'list' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium flex items-center gap-1.5 transition-all whitespace-nowrap ${viewMode === 'list' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-500 hover:text-zinc-700'}`}
                 >
-                    <List size={10} /> <span className="hidden sm:inline">列表管理</span><span className="sm:hidden">列表</span>
+                    <List size={14} /> <span className="hidden sm:inline">列表管理</span><span className="sm:hidden">列表</span>
                 </button>
             </div>
         </div>
@@ -356,13 +356,13 @@ const RecordManager: React.FC<RecordManagerProps> = ({ students, records, setRec
                 <div className="flex border-b border-zinc-100 mb-6 sm:mb-8">
                     <button
                         onClick={() => setEntryModeType('student')}
-                        className={`pb-3 sm:pb-4 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md text-[10px] font-bold transition-all border-b-2 whitespace-nowrap ${entryModeType === 'student' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'}`}
+                        className={`pb-3 sm:pb-4 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md text-sm font-bold transition-all border-b-2 whitespace-nowrap ${entryModeType === 'student' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'}`}
                     >
                         按学生录入
                     </button>
                     <button
                         onClick={() => setEntryModeType('subject')}
-                        className={`pb-3 sm:pb-4 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md text-[10px] font-bold transition-all border-b-2 whitespace-nowrap ${entryModeType === 'subject' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'}`}
+                        className={`pb-3 sm:pb-4 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-md text-sm font-bold transition-all border-b-2 whitespace-nowrap ${entryModeType === 'subject' ? 'bg-white text-emerald-600 shadow-sm' : 'text-zinc-400 hover:text-zinc-600'}`}
                     >
                         按科目批量录入
                     </button>

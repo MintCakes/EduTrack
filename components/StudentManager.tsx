@@ -60,17 +60,36 @@ function StudentModal({ isOpen, onClose, editingStudent, formData, setFormData, 
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-zinc-700 mb-1">科目</label>
-            <select
-              value={formData.subjects?.[0] || ''}
-              onChange={(e) => setFormData({ ...formData, subjects: [e.target.value] })}
-              className="w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-            >
-              <option value="">请选择科目</option>
-              {SUBJECT_OPTIONS.map((subject) => (
-                <option key={subject} value={subject}>{subject}</option>
-              ))}
-            </select>
+            <label className="block text-sm font-medium text-zinc-700 mb-1">科目 (可多选)</label>
+            <div className="flex flex-wrap gap-2">
+              {SUBJECT_OPTIONS.map((subject) => {
+                const isSelected = formData.subjects?.includes(subject) || false;
+                return (
+                  <button
+                    key={subject}
+                    type="button"
+                    onClick={() => {
+                      const currentSubjects = formData.subjects || [];
+                      let newSubjects;
+                      if (isSelected) {
+                        newSubjects = currentSubjects.filter((s) => s !== subject);
+                      } else {
+                        newSubjects = [...currentSubjects, subject];
+                      }
+                      setFormData({ ...formData, subjects: newSubjects });
+                    }}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium border transition-all ${isSelected
+                      ? 'bg-emerald-500 border-emerald-500 text-white shadow-sm'
+                      : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-50'}`}
+                  >
+                    {subject}
+                  </button>
+                );
+              })}
+            </div>
+            {formData.subjects?.length === 0 && (
+              <p className="text-xs text-zinc-400 mt-1">请至少选择一个科目</p>
+            )}
           </div>
           
           <div>
